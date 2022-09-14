@@ -30,8 +30,21 @@ export default class Counter extends Component {
                             <span className="details">Updated Email</span>
                             <input type="text" id="new-email" placeholder="Enter updated email"/>
                         </div>
+                        <div className="input-box">
+                            <span className="details">New Password</span>
+                            <input id="new-password" type="password" placeholder="Enter new password"/>
+                        </div>
+                        <div className="input-box">
+                            <span className="details">Confirm Password</span>
+                            <input id="confirm-password" type="password" placeholder="Confirm password"/>
+                        </div>
+
+                        {/*TODO: TESTING PASSWORD STRENGTH HTML*/}
+
+                        <span id="StrengthDisp" className="badge displayBadge form-control">Weak</span>
                     </div>
                 </form>
+
 
             </React.Fragment>
         );
