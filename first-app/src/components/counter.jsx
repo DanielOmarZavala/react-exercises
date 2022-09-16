@@ -10,8 +10,9 @@ export default class Counter extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1>tester</h1>
-                <button>Increase</button>
+                <h1>React Practice</h1>
+
+                <button>Button</button>
 
                 <div className="container">
                     <i>Login </i>
@@ -24,16 +25,19 @@ export default class Counter extends Component {
                     <div className="user-details">
                         <div className="input-box">
                             <span className="details">Current Email</span>
-                            <input disabled type="text" placeholder={this.user.email}/>
+                            <input disabled type="text" placeholder={this.formatEmail()}/>
                         </div>
+
                         <div className="input-box">
                             <span className="details">Updated Email</span>
                             <input type="text" id="new-email" placeholder="Enter updated email"/>
                         </div>
+
                         <div className="input-box">
                             <span className="details">New Password</span>
                             <input id="new-password" type="password" placeholder="Enter new password"/>
                         </div>
+
                         <div className="input-box">
                             <span className="details">Confirm Password</span>
                             <input id="confirm-password" type="password" placeholder="Confirm password"/>
@@ -48,6 +52,11 @@ export default class Counter extends Component {
 
             </React.Fragment>
         );
+    }
+
+    formatEmail() {
+        const {email} = this.user;
+        return email === "test" ? <h1>TEST</h1> : email;
     }
 }
 
