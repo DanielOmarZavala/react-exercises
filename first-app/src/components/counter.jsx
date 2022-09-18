@@ -3,8 +3,15 @@ import React, {Component} from "react";
 export default class Counter extends Component {
 
     user = {
-        email: "test"
-    }
+        email: "test",
+        tags: ["tg1", "tg2", "tg3"]
+    };
+
+    style = {
+        fontSize: 80,
+        fontWeight: "bold",
+        margin: 300
+    };
 
     //language=HTML
     render() {
@@ -12,7 +19,15 @@ export default class Counter extends Component {
             <React.Fragment>
                 <h1>React Practice</h1>
 
+                <div>
+                    <span style={this.style}>Testing Passed Styles</span>
+                </div>
+
                 <button>Button</button>
+
+                <ul>
+                    {this.user.tags.map(tag => <li key={tag}>{tag}</li>)}
+                </ul>
 
                 <div className="container">
                     <i>Login </i>
