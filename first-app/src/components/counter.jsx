@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 export default class Counter extends Component {
 
-    user = {
+    state = {
         email: "test",
         tags: ["tg1", "tg2", "tg3"]
     };
@@ -26,7 +26,7 @@ export default class Counter extends Component {
                 <button>Button</button>
 
                 <ul>
-                    {this.user.tags.map(tag => <li key={tag}>{tag}</li>)}
+                    {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
                 </ul>
 
                 <div className="container">
@@ -40,7 +40,7 @@ export default class Counter extends Component {
                     <div className="user-details">
                         <div className="input-box">
                             <span className="details">Current Email</span>
-                            <input disabled type="text" placeholder={this.formatEmail()}/>
+                            <input disabled type="text" placeholder="text"/>
                         </div>
 
                         <div className="input-box">
@@ -70,7 +70,7 @@ export default class Counter extends Component {
     }
 
     formatEmail() {
-        const {email} = this.user;
+        const {email} = this.state;
         return email === "test" ? <h1>TEST</h1> : email;
     }
 }
