@@ -3,14 +3,15 @@ import React, {Component} from "react";
 export default class Counter extends Component {
 
     state = {
-        email: "test",
+        email: "email@gmail.com",
+        count: 0,
         tags: ["tg1", "tg2", "tg3"]
     };
 
     style = {
-        fontSize: 80,
+        fontSize: 30,
         fontWeight: "bold",
-        margin: 300
+        margin: 700
     };
 
     //language=HTML
@@ -23,7 +24,10 @@ export default class Counter extends Component {
                     <span style={this.style}>Testing Passed Styles</span>
                 </div>
 
-                <button>Button</button>
+                <div>
+                    Testing Dynamic Classes:
+                    <span className={this.getBadgeClasses()}>{this.formatEmail()}</span>
+                </div>
 
                 <ul>
                     {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
@@ -40,7 +44,7 @@ export default class Counter extends Component {
                     <div className="user-details">
                         <div className="input-box">
                             <span className="details">Current Email</span>
-                            <input disabled type="text" placeholder="text"/>
+                            <input disabled type="text" placeholder="Dynamic user email"/>
                         </div>
 
                         <div className="input-box">
@@ -57,21 +61,21 @@ export default class Counter extends Component {
                             <span className="details">Confirm Password</span>
                             <input id="confirm-password" type="password" placeholder="Confirm password"/>
                         </div>
-
-                        {/*TODO: TESTING PASSWORD STRENGTH HTML*/}
-
-                        <span id="StrengthDisp" className="badge displayBadge form-control">Weak</span>
                     </div>
                 </form>
-
-
             </React.Fragment>
         );
     }
 
     formatEmail() {
         const {email} = this.state;
-        return email === "test" ? <h1>TEST</h1> : email;
+        return email === "email@gmail.com" ? <h3>{email}</h3> : email;
+    }
+
+    getBadgeClasses() {
+        let classes = "badge m-2 rounded-pill bg-";
+        classes += this.state.email === "email@gmail.com" ? "warning" : "secondary";
+        return classes;
     }
 }
 
