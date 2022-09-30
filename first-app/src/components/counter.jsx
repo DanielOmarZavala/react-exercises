@@ -14,7 +14,6 @@ export default class Counter extends Component {
         margin: 700
     };
 
-    //language=HTML
     render() {
         return (
             <React.Fragment>
@@ -29,9 +28,14 @@ export default class Counter extends Component {
                     <span className={this.getBadgeClasses()}>{this.formatEmail()}</span>
                 </div>
 
-                <ul>
-                    {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-                </ul>
+                <div>
+                    {this.state.tags.length === 0 && "There are no tags!"}
+                    {this.renderTags()}
+                </div>
+
+                {/*<ul>*/}
+                {/*    {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}*/}
+                {/*</ul>*/}
 
                 <div className="container">
                     <i>Login </i>
@@ -76,6 +80,19 @@ export default class Counter extends Component {
         let classes = "badge m-2 rounded-pill bg-";
         classes += this.state.email === "email@gmail.com" ? "warning" : "secondary";
         return classes;
+    }
+
+    renderTags() {
+        if (this.state.tags.length === 0) {
+            return <p>Please create some tags!</p>
+        }
+
+        return (
+            <ul>
+                {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
+            </ul>
+
+        )
     }
 }
 
