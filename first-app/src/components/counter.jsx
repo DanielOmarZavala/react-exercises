@@ -29,6 +29,10 @@ export default class Counter extends Component {
                 </div>
 
                 <div>
+                    <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+                </div>
+
+                <div>
                     {this.state.tags.length === 0 && "There are no tags!"}
                     {this.renderTags()}
                 </div>
@@ -93,6 +97,10 @@ export default class Counter extends Component {
             </ul>
 
         )
+    }
+
+    handleIncrement() {
+        console.log('Increment Clicked');
     }
 }
 
