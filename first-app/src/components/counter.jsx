@@ -14,6 +14,12 @@ export default class Counter extends Component {
         margin: 700
     };
 
+    // constructor(props) {
+    //     super(props);
+    //     // console.log('Constructor', this);
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+
     render() {
         return (
             <React.Fragment>
@@ -99,8 +105,8 @@ export default class Counter extends Component {
         )
     }
 
-    handleIncrement() {
-        console.log('Increment Clicked');
+    handleIncrement = () => {
+        console.log('Increment Clicked', this);
     }
 }
 
