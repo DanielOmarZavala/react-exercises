@@ -35,6 +35,7 @@ export default class Counter extends Component {
                 </div>
 
                 <div>
+                    <span className="badge m-2 rounded-pill bg-primary">{this.formatCount()}</span>
                     <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
                 </div>
 
@@ -86,6 +87,11 @@ export default class Counter extends Component {
         return email === "email@gmail.com" ? <h3>{email}</h3> : email;
     }
 
+    formatCount() {
+        const {count} = this.state;
+        return count === 0 ? "zero" : count;
+    }
+
     getBadgeClasses() {
         let classes = "badge m-2 rounded-pill bg-";
         classes += this.state.email === "email@gmail.com" ? "warning" : "secondary";
@@ -106,7 +112,9 @@ export default class Counter extends Component {
     }
 
     handleIncrement = () => {
-        console.log('Increment Clicked', this);
+        // console.log('Increment Clicked', this);
+
+        this.setState({count: this.state.count +1})
     }
 }
 
