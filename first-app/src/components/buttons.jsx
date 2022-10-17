@@ -6,12 +6,20 @@ export default class Buttons extends Component {
         highlight: 1
     };
 
+    iden = "Identifier: " + 3;
+
+    handleHighlight = identifier => {
+        console.log(identifier);
+        this.setState({highlight: this.state.highlight + 1});
+    }
+
+
     render() {
         return (
             <React.Fragment>
                 <div>
                     <span>{this.state.highlight}</span>
-                    <button className={this.getBadgeClasses()}>Highlight</button>
+                    <button onClick={() => this.handleHighlight(this.iden)} className={this.getBadgeClasses()}>Highlight</button>
                 </div>
             </React.Fragment>
         )
@@ -21,10 +29,6 @@ export default class Buttons extends Component {
         let classes = "badge m-2 bg-";
         classes += this.state.highlight === 1 ? "warning" : "primary";
         return classes;
-    }
-
-    handleHighlight = () => {
-        this.setState({highlight: this.state.highlight + 1});
     }
 
 }
