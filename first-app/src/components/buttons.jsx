@@ -1,34 +1,23 @@
 import React, {Component} from "react";
+import Button from "./button";
 
 export default class Buttons extends Component {
 
     state = {
-        highlight: 1
-    };
-
-    iden = "Identifier: " + 3;
-
-    handleHighlight = identifier => {
-        console.log(identifier);
-        this.setState({highlight: this.state.highlight + 1});
+        buttons: [
+            {id: 1, value: 0},
+            {id: 2, value: 0},
+            {id: 3, value: 0},
+            {id: 4, value: 0}
+        ]
     }
-
 
     render() {
+
         return (
-            <React.Fragment>
-                <div>
-                    <span>{this.state.highlight}</span>
-                    <button onClick={() => this.handleHighlight(this.iden)} className={this.getBadgeClasses()}>Highlight</button>
-                </div>
-            </React.Fragment>
-        )
+            <div>
+                {this.state.buttons.map(button => <Button key={button.id} />)}
+            </div>
+        );
     }
-
-    getBadgeClasses() {
-        let classes = "badge m-2 bg-";
-        classes += this.state.highlight === 1 ? "warning" : "primary";
-        return classes;
-    }
-
 }
