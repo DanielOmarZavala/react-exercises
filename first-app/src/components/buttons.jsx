@@ -16,7 +16,11 @@ export default class Buttons extends Component {
 
         return (
             <div>
-                {this.state.buttons.map(button => <Button key={button.id} />)}
+                {this.state.buttons.map(button => (
+                    <Button key={button.id} value={button.id} id={button.id} />
+                    {/*    <h4>Button #{button.id}</h4>*/}
+                    {/*</Button>*/}
+                ))}
             </div>
         );
     }

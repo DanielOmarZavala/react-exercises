@@ -3,7 +3,7 @@ import React, {Component} from "react";
 export default class Button extends Component {
 
     state = {
-        highlight: 1
+        highlight: this.props.value
     };
 
     iden = "Identifier: " + 3;
@@ -15,9 +15,13 @@ export default class Button extends Component {
 
 
     render() {
+        console.log('props', this.props);
+
         return (
             <React.Fragment>
                 <div>
+                    {/*{this.props.children}*/}
+                    <h4>{this.props.id}</h4>
                     <span>{this.state.highlight}</span>
                     <button onClick={() => this.handleHighlight(this.iden)} className={this.getBadgeClasses()}>Highlight</button>
                 </div>
