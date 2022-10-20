@@ -12,15 +12,18 @@ export default class Buttons extends Component {
         ]
     }
 
+    handleDelete = (counterId) => {
+        console.log('this thing.', counterId)
+
+        const buttons = this.state.buttons.filter(b => b.id !== counterId)
+        this.setState({buttons: buttons});
+    }
+
     render() {
 
         return (
             <div>
-                {this.state.buttons.map(button => (
-                    <Button key={button.id} value={button.id} id={button.id} />
-                    {/*    <h4>Button #{button.id}</h4>*/}
-                    {/*</Button>*/}
-                ))}
+                {this.state.buttons.map(button => (<Button key={button.id} onDelete={this.handleDelete} button={button} {/*value={button.id} id={button.id}*/} />))}
             </div>
         );
     }
