@@ -25,11 +25,15 @@ export default class Button extends Component {
                     {/*{this.props.children}*/}
                     <h4>{this.props.button.id}</h4>
                     <span>{this.state.highlight}</span>
-                    <button onClick={() => this.handleHighlight(this.iden)} className={this.getBadgeClasses()}>Highlight</button>
-                    <button onClick={() => this.props.onDelete(this.props.button.id)} className={this.getButtonClasses()}>Delete</button>
+                    <button onClick={() => this.handleHighlight(this.iden)}
+                            className={this.getBadgeClasses()}>Highlight
+                    </button>
+                    <button onClick={() => this.props.onDelete(this.props.button.id)}
+                            className={this.getButtonClasses()}>Delete
+                    </button>
                 </div>
             </React.Fragment>
-        )
+        );
     }
 
     //dynamic badge classes

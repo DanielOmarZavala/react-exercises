@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Counter from './components/counter';
 import Test from "./components/test";
 import Buttons from "./components/buttons";
+import Nav from "./components/nav";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,9 @@ root.render(
         }
         {
             <Buttons/>
+        }
+        {
+            <Nav/>
         }
     </React.StrictMode>
 );
