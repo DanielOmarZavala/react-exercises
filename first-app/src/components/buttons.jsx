@@ -12,10 +12,10 @@ export default class Buttons extends Component {
         ]
     }
 
-    handleDelete = (counterId) => {
-        console.log('this thing.', counterId)
+    handleDelete = (buttonId) => {
+        console.log('Button ID #: ', buttonId)
 
-        const buttons = this.state.buttons.filter(b => b.id !== counterId)
+        const buttons = this.state.buttons.filter(b => b.id !== buttonId)
         this.setState({buttons: buttons});
     }
 
@@ -23,8 +23,10 @@ export default class Buttons extends Component {
 
         return (
             <div>
-                {this.state.buttons.map(button => (<Button key={button.id} onDelete={this.handleDelete} button={button} {/*value={button.id} id={button.id}*/} />))}
+                {this.state.buttons.map(button => (<Button key={button.id} onDelete={this.handleDelete} button={button} />))}
             </div>
         );
+
+        /*<Button key={button.id} onDelete={this.handleDelete} button={button} value={button.id} id={button.id} />*/
     }
 }
