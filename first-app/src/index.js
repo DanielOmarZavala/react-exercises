@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Counter from './components/counter';
-import Test from "./components/test";
-import Buttons from "./components/buttons";
-import Nav from "./components/nav";
+import Counter from './components/Counter';
+import Boxes from "./components/Boxes";
+import Buttons from "./components/Buttons";
+import Nav from "./components/Nav";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +16,7 @@ root.render(
             <Counter/>
         }
         {
-            <Test/>
+            <Boxes/>
         }
         {
             <Buttons/>
